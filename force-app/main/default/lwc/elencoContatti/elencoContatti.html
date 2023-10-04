@@ -1,17 +1,29 @@
 <template>
-    <lightning-card title="Elenco Contatti"> </lightning-card>
+    <lightning-card title="Elenco Contatti"> 
+        <p style="text-align: center;"> 
+            <lightning-button variant="brand" label="Refresh Table" onclick={refreshData} class="slds-var-m-left_x-small" style="text-align: center;">
+                
+            </lightning-button>
+        </p>
+        
+    </lightning-card>
+    
     <div style="height: 300px;">
         <lightning-datatable
         key-field="id"
-        data={contacts.data}
+        data={currentRecords}
         columns={columns}>
-    </lightning-datatable>
-</div>
-<p style="text-align: center;">
-    <lightning-card>  
-        <lightning-button variant="brand" label="Refresh Table" onclick={refreshData} class="slds-var-m-left_x-small" style="text-align: center;">
-        </lightning-button>  
-    </lightning-card>
-    
-</p>
+        </lightning-datatable>
+    </div>
+
+    <div class="pagination">
+        <p style="text-align: center;">
+        <lightning-card>
+        <lightning-button variant="brand" label="Previous" onclick={handlePrevious}  disabled={isPreviousDisabled}></lightning-button>
+        <span style="padding:1cm">Page {currentPage} of {totalPages}</span>
+        <lightning-button variant="brand" label="Next" onclick={handleNext} disabled={isNextDisabled}></lightning-button>
+        </lightning-card>
+        </p>
+    </div>
+
 </template>
