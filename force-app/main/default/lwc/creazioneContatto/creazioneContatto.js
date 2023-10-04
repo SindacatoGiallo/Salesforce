@@ -22,7 +22,7 @@ handleContactCreated(){
         variant: "success"
     });
     this.dispatchEvent(toastEvent);
-    this.handleReset();
+    
 }
 
 handleReset() {
