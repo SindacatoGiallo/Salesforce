@@ -1,5 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import getContacts from '@salesforce/apex/ElencoContatti.getContacts';
+import { refreshApex } from '@salesforce/apex';
 
 const columns = [
     { label: 'First Name', fieldName: 'FirstName', type: 'text'},
@@ -12,6 +13,13 @@ const columns = [
 export default class ElencoContatti extends LightningElement {
     columns = columns;
     @wire(getContacts) contacts;
+
+    // now i need to hadle the event of the button
+
+    refreshData(){
+        refreshApex(this.contacts);
+
+
+}
 }
 
-// populate the data table with the data returned from the Apex controller

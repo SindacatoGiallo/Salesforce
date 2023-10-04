@@ -2,9 +2,16 @@
     <lightning-card title="Elenco Contatti"> </lightning-card>
     <div style="height: 300px;">
         <lightning-datatable
-                key-field="id"
-                data={contacts.data}
-                columns={columns}>
-        </lightning-datatable>
-    </div>
+        key-field="id"
+        data={contacts.data}
+        columns={columns}>
+    </lightning-datatable>
+</div>
+<p style="text-align: center;">
+    <lightning-card>  
+        <lightning-button variant="brand" label="Refresh Table" onclick={refreshData} class="slds-var-m-left_x-small" style="text-align: center;">
+        </lightning-button>  
+    </lightning-card>
+    
+</p>
 </template>
