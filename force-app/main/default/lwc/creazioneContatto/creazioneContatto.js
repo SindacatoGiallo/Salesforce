@@ -5,6 +5,7 @@ import LastName from '@salesforce/schema/Contact.LastName';
 import Email from '@salesforce/schema/Contact.Email';
 import Phone from '@salesforce/schema/Contact.Phone';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { ElencoContatti } from 'c/elencoContatti';
 
 export default class CreazioneContatto extends LightningElement {
 
@@ -22,6 +23,9 @@ handleContactCreated(){
         variant: "success"
     });
     this.dispatchEvent(toastEvent);
+    const contactcreated = new CustomEvent('contactcreated');
+    console.log('About to dispatch contactcreated event');
+    this.dispatchEvent(contactcreated);
     
 }
 
@@ -37,5 +41,6 @@ handleReset() {
     }
  
 }
+
 }
 

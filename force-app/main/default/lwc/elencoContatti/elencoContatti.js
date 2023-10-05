@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import getContacts from '@salesforce/apex/ElencoContatti.getContacts';
 import { refreshApex } from '@salesforce/apex';
 
@@ -60,10 +60,11 @@ export default class ElencoContatti extends LightningElement {
     }
 
     // now i need to hadle the event of the button
-    
+    @api
     refreshData(){
-        refreshApex(this.contacts);
-
+        console.log('Refresh Datatable called!');
+        refreshApex(this.wiredContactsResult);
+        
     }
     
     get isPreviousDisabled() {
