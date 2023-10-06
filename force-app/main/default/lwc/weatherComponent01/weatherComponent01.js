@@ -1,4 +1,4 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track,api } from 'lwc';
 import weatherControl from '@salesforce/apex/WeatherControl.weatherControl';
 
 
@@ -8,13 +8,20 @@ export default class WeatherComponent01 extends LightningElement {
 @track country;
 @track weather;
 @track weatherIcon;
+@track cityName  = '';
 
 connectedCallback() {   
     this.fetchWeatherData();
 }
 
+handleCityNameChange(event) {
+    this.cityName  = event.target.value;
+    console.log('City name', this.cityName);
+    this.fetchWeatherData();
+}
+@api
 fetchWeatherData() {
-    weatherControl()
+    weatherControl({cityNation: this.cityName })
     .then (result => {
         if (result) {
             this.weatherData = JSON.parse(result);
@@ -36,23 +43,6 @@ fetchWeatherData() {
         console.error('Error fetching weather data', error);
     });
 
-
-
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

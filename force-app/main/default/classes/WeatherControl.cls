@@ -1,9 +1,9 @@
 public with sharing class WeatherControl {
 
     @AuraEnabled(cacheable=true)
-    public static String weatherControl() {
+    public static String weatherControl(String cityNation) {
         String apiKey = WeatherControl__c.getInstance().APIKey__c;
-        String cityNation = 'Milano,it';
+        //String cityNation = 'Milano,it';
         System.debug(apiKey);
         String endPoint3 = 'https://api.openweathermap.org/data/2.5/weather?q='+cityNation+'&APPID='+apiKey;
         //make a callout

@@ -1,19 +1,20 @@
 <template>
-    <lightning-card title="The Sublime Weather App to track the weather in Milan" icon-name="standard:events" style="text-align: center;" ></lightning-card>
+    <lightning-card title="The Sublime Weather App" icon-name="standard:events" style="text-align: center;"></lightning-card>
     <lightning-card>
-    <p style="padding-left: 1em;">
-    <lightning-formatted-text aria-label="City" value="Ecco i risultati meteo per la città Milano"  ></lightning-formatted-text>
-    <br>
-    <br>
-    <lightning-formatted-text aria-label="CountryText" value="Milano si trova in "></lightning-formatted-text>
-    <lightning-formatted-text aria-label="CountryValue" value={country}></lightning-formatted-text>
-    <br>
-    <br>
-    <lightning-formatted-text aria-label="WeatherText" value="Al momento il meteo è "></lightning-formatted-text>
-    <lightning-formatted-text aria-label="WeatherValue" value={weather}></lightning-formatted-text>
-    <lightning-icon icon-name='standard:invocable_action' alternative-text="Nuvoloso" title="Nuvoloso" style="margin-left: 1em;" ></lightning-icon>
-    </p>
-    <lightning-formatted-text aria-label="Temperature" value=""></lightning-formatted-text>
-    <lightning-formatted-text aria-label="Pressure" value=""></lightning-formatted-text>
+        <p style="padding-left: 1em;">
+            <lightning-formatted-text aria-label="City" value="Ecco i risultati meteo per la città " ></lightning-formatted-text>
+            <br>
+            <br>
+            <lightning-formatted-text aria-label="CountryText" value="Milano si trova in "></lightning-formatted-text>
+            <lightning-formatted-text aria-label="CountryValue" value={country}></lightning-formatted-text>
+            <br>
+            <br>
+            <lightning-formatted-text aria-label="WeatherText" value="Al momento il meteo è "></lightning-formatted-text>
+            <lightning-formatted-text aria-label="WeatherValue" value={weather}></lightning-formatted-text>
+            <lightning-icon icon-name={weatherIcon} alternative-text="Weather Icon" title={weather} style="margin-left: 1em;"></lightning-icon>
+        </p>
+        <lightning-input label="City" value={cityName} ></lightning-input>
+        <lightning-button variant="brand" label="Aggiorna Città" onclick={handleCityNameChange}></lightning-button>
+        <!-- Add placeholders for Temperature and Pressure if you want to display those. -->
     </lightning-card>
 </template>
