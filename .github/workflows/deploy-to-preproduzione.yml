@@ -3,7 +3,7 @@ name: Deploy from Developer to Preproduzione
 on:
   push:
     branches:
-      - Developer
+      - Preproduzione
 
 jobs:
   deploy:
@@ -13,8 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Push changes to Preproduzione branch
+    - name: Push changes to Produzione branch
       run: |
-        git checkout -b Preproduzione origin/Preproduzione
-        git merge --no-edit origin/Developer
-        git push origin Preproduzione
+        git checkout -b main origin/main
+        git merge --no-edit origin/Preproduzione
+        git push origin main
