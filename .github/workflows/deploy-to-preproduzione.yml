@@ -1,0 +1,20 @@
+name: Deploy from Developer to Preproduzione
+
+on:
+  push:
+    branches:
+      - Developer
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Push changes to Preproduzione branch
+      run: |
+        git checkout -b Preproduzione origin/Preproduzione
+        git merge --no-edit origin/Developer
+        git push origin Preproduzione
