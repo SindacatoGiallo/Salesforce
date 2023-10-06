@@ -1,7 +1,8 @@
 <template>
     <lightning-card title="The Sublime Weather App to track the weather in Milan" icon-name="standard:events" style="text-align: center;" ></lightning-card>
     <lightning-card>
-    <lightning-formatted-text aria-label="City" value="Ecco i risultati meteo per la città Milano"></lightning-formatted-text>
+    <p style="padding-left: 1em;">
+    <lightning-formatted-text aria-label="City" value="Ecco i risultati meteo per la città Milano"  ></lightning-formatted-text>
     <br>
     <br>
     <lightning-formatted-text aria-label="CountryText" value="Milano si trova in "></lightning-formatted-text>
@@ -10,7 +11,8 @@
     <br>
     <lightning-formatted-text aria-label="WeatherText" value="Al momento il meteo è "></lightning-formatted-text>
     <lightning-formatted-text aria-label="WeatherValue" value={weather}></lightning-formatted-text>
-    <lightning-icon icon-name='standard:invocable_action' alternative-text="Approved" title="Approved" style="align-self: center;"></lightning-icon>
+    <lightning-icon icon-name='standard:invocable_action' alternative-text="Nuvoloso" title="Nuvoloso" style="margin-left: 1em;" ></lightning-icon>
+    </p>
     <lightning-formatted-text aria-label="Temperature" value=""></lightning-formatted-text>
     <lightning-formatted-text aria-label="Pressure" value=""></lightning-formatted-text>
     </lightning-card>
