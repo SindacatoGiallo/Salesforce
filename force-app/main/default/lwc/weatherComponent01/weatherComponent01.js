@@ -6,6 +6,8 @@ export default class WeatherComponent01 extends LightningElement {
 
 @track weatherData;
 @track country;
+@track weather;
+@track weatherIcon;
 
 connectedCallback() {   
     this.fetchWeatherData();
@@ -24,6 +26,7 @@ fetchWeatherData() {
             this.weather = this.weatherData.weather[0].main;
             if (this.weather === 'Clouds') {
                 this.weather = 'Nuvoloso';
+                this.weatherIcon = 'standard:invocable_action';
             }
             //TO DO - parsare il dato
             
