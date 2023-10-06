@@ -19,7 +19,7 @@ handleCityNameChange(event) {
     console.log('City name', this.cityName);
     this.fetchWeatherData();
 }
-@api
+
 fetchWeatherData() {
     weatherControl({cityNation: this.cityName })
     .then (result => {
