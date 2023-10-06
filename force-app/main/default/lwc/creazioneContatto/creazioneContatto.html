@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <lightning-record-edit-form object-api-name={objectApiName} columns="2" fields={fields} onsuccess={handleContactCreated} >
+            <lightning-input-field field-name={firstName}></lightning-input-field>
+            <lightning-input-field field-name={lastName}></lightning-input-field>
+            <lightning-input-field field-name={email}></lightning-input-field>
+            <lightning-input-field field-name={phone}></lightning-input-field>
+            <lightning-button variant="brand" type="submit" name="save" label="Save"></lightning-button>
+            <lightning-button variant="brand" name="reset" label="Reset" onclick={handleReset}></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
