@@ -8,7 +8,7 @@ export default class WeatherComponent01 extends LightningElement {
 @track country;
 @track weather;
 @track weatherIcon;
-@track cityName  = '';
+@track cityName  = 'Milano,it';
 
 connectedCallback() {   
     this.fetchWeatherData();
@@ -17,7 +17,6 @@ connectedCallback() {
 handleCityNameChange(event) {
     this.cityName  = event.target.value;
     console.log('City name', this.cityName);
-    this.fetchWeatherData();
 }
 
 fetchWeatherData() {
@@ -25,6 +24,7 @@ fetchWeatherData() {
     .then (result => {
         if (result) {
             this.weatherData = JSON.parse(result);
+            console.log('CityNation Combo', this.cityName);
             console.log('Weather data', this.weatherData);
             this.country = this.weatherData.sys.country;
             if (this.country === 'IT') {
@@ -43,6 +43,10 @@ fetchWeatherData() {
         console.error('Error fetching weather data', error);
     });
 
-    
 }
+handleButtonClick() {
+    this.fetchWeatherData();
+}
+
+
 }

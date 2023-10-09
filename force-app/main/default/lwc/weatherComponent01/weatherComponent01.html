@@ -13,8 +13,8 @@
             <lightning-formatted-text aria-label="WeatherValue" value={weather}></lightning-formatted-text>
             <lightning-icon icon-name={weatherIcon} alternative-text="Weather Icon" title={weather} style="margin-left: 1em;"></lightning-icon>
         </p>
-        <lightning-input label="City" value={cityName} ></lightning-input>
-        <lightning-button variant="brand" label="Aggiorna Città" onclick={handleCityNameChange}></lightning-button>
+        <lightning-input label="City" value={cityName} onchange={handleCityNameChange}></lightning-input>
+        <lightning-button variant="brand" label="Aggiorna Città" onclick={handleButtonClick}></lightning-button>
         <!-- Add placeholders for Temperature and Pressure if you want to display those. -->
     </lightning-card>
 </template>
